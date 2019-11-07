@@ -22,7 +22,7 @@
     tower_username: "{{ user_name }}"
     tower_password: "{{ password }}"
     validate_certs: no 
-    ssh_key_data: "{{ user_cred_path }}"
+    ssh_key_data: "{{ lookup('file', '/root/.ssh/openstack.pem') }}"
     username: "{{ user_cred_name }}"
 
 - name: Create Inventory
