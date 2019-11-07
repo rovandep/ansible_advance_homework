@@ -1,10 +1,4 @@
----
+- include_tasks: createinstance.yml
+- include_tasks: addfloatip.yml
+- include_tasks: showpubip.yml
 
-# tasks file for osp.servers
-- name: Create new server instances and attaches them a network and passes metadata to the instance
-
-
-- name: Add floating IP to Servers
-   
-
-- name: Wait for server to be available
