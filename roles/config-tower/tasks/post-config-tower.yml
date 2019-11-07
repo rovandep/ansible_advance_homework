@@ -14,7 +14,7 @@
 
 - name: Machine Credentail to connect to workstation using openstack.pub
   tower_credential:
-    name: Connect_to_workstation
+    name: "{{ ssh_cred_name }}" 
     organization: "{{ org_name }}"
     state: present
     kind: ssh
@@ -22,8 +22,8 @@
     tower_username: "{{ user_name }}"
     tower_password: "{{ password }}"
     validate_certs: no 
-    ssh_key_data: "{{ lookup('file', '/root/.ssh/openstack.pem') }}"
-    username: cloud-user
+    ssh_key_data: "{{ user_cred_path }}"
+    username: "{{ user_cred_name }}"
 
 - name: Create Inventory
   command: |
