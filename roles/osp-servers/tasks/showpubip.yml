@@ -1,8 +1,38 @@
-- name: Show "{{ instanceip }}" public IP
-  debug: var=instancefloatingip.floating_ip.floating_ip_address
-- name: Wait for "{{ instance_name }}" to be available
+- name: Show "{{ instanceip_fe }}" public IP
+  debug: var=instancefloatingip_fe.floating_ip.floating_ip_address
+- name: Wait for "{{ instance_fe }}" to be available
   wait_for:
-    host: "{{ instancefloatingip.floating_ip.floating_ip_address }}"
+    host: "{{ instancefloatingip_fe.floating_ip.floating_ip_address }}"
+    port: 22
+    search_regex: OpenSSH
+    timeout: 600
+  delegate_to: "{{ inventory_hostname }}"
+
+  - name: Show "{{ instanceip_a1 }}" public IP
+  debug: var=instancefloatingip_a1.floating_ip.floating_ip_address
+- name: Wait for "{{ instance_a1 }}" to be available
+  wait_for:
+    host: "{{ instancefloatingip_a1.floating_ip.floating_ip_address }}"
+    port: 22
+    search_regex: OpenSSH
+    timeout: 600
+  delegate_to: "{{ inventory_hostname }}"
+
+  - name: Show "{{ instanceip_a2 }}" public IP
+  debug: var=instancefloatingip_a2.floating_ip.floating_ip_address
+- name: Wait for "{{ instance_a2 }}" to be available
+  wait_for:
+    host: "{{ instancefloatingip_a2.floating_ip.floating_ip_address }}"
+    port: 22
+    search_regex: OpenSSH
+    timeout: 600
+  delegate_to: "{{ inventory_hostname }}"
+
+  - name: Show "{{ instanceip_db }}" public IP
+  debug: var=instancefloatingip_db.floating_ip.floating_ip_address
+- name: Wait for "{{ instance_db }}" to be available
+  wait_for:
+    host: "{{ instancefloatingip_db.floating_ip.floating_ip_address }}"
     port: 22
     search_regex: OpenSSH
     timeout: 600

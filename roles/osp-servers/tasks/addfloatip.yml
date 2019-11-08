@@ -1,10 +1,43 @@
-- name: Add floating IP to "{{ instance_name }}"
+- name: Add floating IP to "{{ instance_fe }}"
   os_floating_ip:
     cloud: ospcloud
     state: present
     reuse: yes
-    server: "{{ instance_name }}"
+    server: "{{ instance_fe }}"
     network: ext_network
     wait: true
     timeout: 180
-  register: instancefloatingip
+  register: instancefloatingip_fe
+
+- name: Add floating IP to "{{ instance_a1 }}"
+  os_floating_ip:
+    cloud: ospcloud
+    state: present
+    reuse: yes
+    server: "{{ instance_a1 }}"
+    network: ext_network
+    wait: true
+    timeout: 180
+  register: instancefloatingip_a1
+
+  - name: Add floating IP to "{{ instance_a2 }}"
+  os_floating_ip:
+    cloud: ospcloud
+    state: present
+    reuse: yes
+    server: "{{ instance_a2 }}"
+    network: ext_network
+    wait: true
+    timeout: 180
+  register: instancefloatingip_a2
+
+  - name: Add floating IP to "{{ instance_db }}"
+  os_floating_ip:
+    cloud: ospcloud
+    state: present
+    reuse: yes
+    server: "{{ instance_db }}"
+    network: ext_network
+    wait: true
+    timeout: 180
+  register: instancefloatingip_db
