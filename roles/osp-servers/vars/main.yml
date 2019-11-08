@@ -1,5 +1,24 @@
-#---
-## vars file for osp.servers
+---
+# vars file for osp.servers
+
+instance_fe: frontend
+group_fe: frontend
+deploy_fe: QA 
+sec_gr_fe: frontend
+instance_a1: frontend
+group_a1: frontend
+deploy_a1: QA 
+sec_gr_a1: frontend
+instance_a2: frontend
+group_a2: frontend
+deploy_a2: QA 
+sec_gr_a2: frontend
+instance_db: frontend
+group_db: frontend
+deploy_db: QA 
+sec_gr_db: frontend
+
+
 #osp_servers:
 #  frontend:
 #    name: frontend
@@ -37,12 +56,3 @@
 #    security_group: db
 #    meta:
 #      - { group: appdbs, deployment_name: QA}
-
----
-# vars file for osp-instances
-    webserver_name: web1
-    databaseserver_name: db1
-    flavor_name: m1.small
-    webserver_group: webservers
-    database_group: databaseservers
-    deployment: dev
