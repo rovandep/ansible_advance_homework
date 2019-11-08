@@ -1,4 +1,4 @@
-- name: Create a server instance
+- name: Create a server instance_fe
   os_server:
     cloud: ospcloud
     name: "{{ instance_fe }}"
@@ -16,9 +16,9 @@
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
       curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
-  register: instanceip
+  register: instanceip_fe
 
-  - name: Create a server instance
+- name: Create a server instance_a1
   os_server:
     cloud: ospcloud
     name: "{{ instance_a1 }}"
@@ -36,9 +36,9 @@
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
       curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
-  register: instanceip
+  register: instanceip_a1
 
-  - name: Create a server instance
+- name: Create a server instance_a2
   os_server:
     cloud: ospcloud
     name: "{{ instance_a2 }}"
@@ -56,9 +56,9 @@
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
       curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
-  register: instanceip
+  register: instanceip_a2
 
-  - name: Create a server instance
+- name: Create a server instance_db
   os_server:
     cloud: ospcloud
     name: "{{ instance_db }}"
@@ -76,4 +76,4 @@
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
       curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
-  register: instanceip
+  register: instanceip_db
