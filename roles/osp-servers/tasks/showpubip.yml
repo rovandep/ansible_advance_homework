@@ -8,7 +8,7 @@
     timeout: 600
   delegate_to: "{{ inventory_hostname }}"
 
-  - name: Show "{{ instanceip_a1 }}" public IP
+- name: Show "{{ instanceip_a1 }}" public IP
   debug: var=instancefloatingip_a1.floating_ip.floating_ip_address
 - name: Wait for "{{ instance_a1 }}" to be available
   wait_for:
@@ -18,7 +18,7 @@
     timeout: 600
   delegate_to: "{{ inventory_hostname }}"
 
-  - name: Show "{{ instanceip_a2 }}" public IP
+- name: Show "{{ instanceip_a2 }}" public IP
   debug: var=instancefloatingip_a2.floating_ip.floating_ip_address
 - name: Wait for "{{ instance_a2 }}" to be available
   wait_for:
@@ -28,7 +28,7 @@
     timeout: 600
   delegate_to: "{{ inventory_hostname }}"
 
-  - name: Show "{{ instanceip_db }}" public IP
+- name: Show "{{ instanceip_db }}" public IP
   debug: var=instancefloatingip_db.floating_ip.floating_ip_address
 - name: Wait for "{{ instance_db }}" to be available
   wait_for:
