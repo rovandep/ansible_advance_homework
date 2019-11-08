@@ -20,7 +20,7 @@
     timeout: 180
   register: instancefloatingip_a1
 
-  - name: Add floating IP to "{{ instance_a2 }}"
+- name: Add floating IP to "{{ instance_a2 }}"
   os_floating_ip:
     cloud: ospcloud
     state: present
@@ -31,7 +31,7 @@
     timeout: 180
   register: instancefloatingip_a2
 
-  - name: Add floating IP to "{{ instance_db }}"
+- name: Add floating IP to "{{ instance_db }}"
   os_floating_ip:
     cloud: ospcloud
     state: present
