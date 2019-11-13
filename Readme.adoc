@@ -1,3 +1,5 @@
+=== NOTE: This repository contains material for a Red Hat Learning Course and should not be used as-is
+
 ==== Ansible Tower Config
 
 
